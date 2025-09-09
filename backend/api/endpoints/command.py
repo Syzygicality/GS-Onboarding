@@ -54,6 +54,4 @@ def delete_command(id: int, db: Session = Depends(get_db)):
     db.delete(command)
     db.commit()
 
-    # return updated list of commands
-    commands = db.query(Command).all()
-    return {"data": commands}
+    return get_commands(db)

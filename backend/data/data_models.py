@@ -37,8 +37,7 @@ class MainCommand(BaseSQLModel, table=True):
             return self
         elif self.params and self.format and len(self.params.split(',')) == len(self.format.split(',')):
             return self
-        raise ValueError
-
+        raise ValueError(f"Invalid command ID: {id}")
 
 class Command(BaseSQLModel, table=True):
     """
